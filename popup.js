@@ -1,11 +1,9 @@
 let request_count = 0;
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const from = document.getElementById('from');
     const to = document.getElementById('to');
     const hours = document.getElementById('hours');
-    console.log(hours);
 
     const content = document.getElementById('content');
     const spinner = document.getElementById('spinner');
@@ -14,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const counter_total = document.getElementById('counter-total');
     const counter_left = document.getElementById('counter-left');
 
-    // Set minimum To == From
+    // Set minimum To equals From
     from.addEventListener('change', () => {
         to.value = from.value;
         to.min = from.value;
@@ -54,13 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(iframe);
         });
     });
-
-    // document.getElementById('optionsLink').addEventListener('click', (ev) => {
-    //     ev.preventDefault();
-    //     chrome.tabs.create({ 'url': "/options.html" })
-    // })
 });
 
+// This function skips weekends
 const getDaysArray = function (start, end) {
     for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
         const isWeekend = new Date(dt).getDay() == 0 || new Date(dt).getDay() == 6;
@@ -73,8 +67,6 @@ const getDaysArray = function (start, end) {
 
 // Set hours response
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log(sender);
-    
     request_count--;
     const content = document.getElementById('content');
 
