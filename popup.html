@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/img_logo_o.png" alt="">
+        <h4 class="text-logo">CMS</h4>
+    </header>
+
+    <small id="counter" style="display: none;">Pendientes: 
+        <span id="counter-left">0</span>
+        de
+        <span id="counter-total">0</span>
+    </small>
+
+    <div id="spinner-container">
+        <img id="spinner" src="images/spinner.gif" alt="loading" style="display: none">
+    </div>
+
+
+    <div id="successContainer" style="display: none">
+        <img id="success" src="images/tick.png" alt="success" >
+    </div>
+
+    <div id="errorContainer" style="display: none">
+        <img id="error" src="images/error.png" alt="error">
+    </div>
+
+    <div id="content">
+
+        <div id="controls">
+            <div>
+
+                <span>
+
+                    <label for="from">Desde:</label>
+                    <input type="date" id="from">
+                </span>
+                <span>
+
+                    <label for="to">Hasta:</label>
+                    <input type="date" id="to">
+                </span>
+            </div>
+
+            <div id='bottomRow'>
+                <div id='timeContainer'>
+                    <label for="hours">Horas:</label>
+                    <input type="number" id="hours">
+                </div>
+            </div>
+
+            <button id="go">Cargar horas</button>
+        </div>
+
+
+        <!-- <div id="cron">
+            <label for="schedual">¿Correr periodicamente?</label>
+            <input id='schedual' type="checkbox" />
+            <input type="datetime">
+        </div> -->
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

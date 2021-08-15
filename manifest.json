@@ -1,0 +1,37 @@
+{
+    "name": "TEST OA EXTENSION",
+    "description": "CMS auto",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/img_logo_o.png",
+            "32": "/images/img_logo_o.png",
+            "48": "/images/img_logo_o.png",
+            "128": "/images/img_logo_o.png"
+        }
+    },
+    "icons": {
+        "16": "/images/img_logo_o.png",
+        "32": "/images/img_logo_o.png",
+        "48": "/images/img_logo_o.png",
+        "128": "/images/img_logo_o.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://cms.overactive.com/timeentrieswp.aspx?INS,0"
+            ],
+            "js": [
+                "contentScript.js"
+            ],
+            "all_frames": true
+        }
+    ]
+}
